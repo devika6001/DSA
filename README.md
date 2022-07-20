@@ -1,3 +1,2 @@
 # DSA
-Data structures and algorathims
-Add your favourite data structures and algorathims here
+In this repository, I am sharing codes of DSA
