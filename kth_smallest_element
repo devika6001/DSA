@@ -1,0 +1,45 @@
+#include<bits/stdc++.h>
+using namespace std;
+int find(int a[],int n,int k)
+{
+    int index=rand(n);
+    int s1[20],s2[20],s3[20],a=0,b=0,c=0;
+    for(int i=0;i<n;i++)
+    {
+        if(a[i]<a[index])
+        {
+            s1[a]=a[i];
+            a++;
+        }
+        else if(a[i]>a[index])
+        {
+            s3[c]=a[i];
+            c++;
+        }
+        else
+            s2[b++]=a[i];
+    }
+    if(k<a)
+        find(s1,a,k);
+    else if(k<a+b)
+        return s2[0];
+    else
+        find(s3,c-(a+b),k);
+    return 0;
+}
+int main()
+{
+    int n,a[20],k;
+    cout<<"Enter the number of elements:";
+    cin>>n;
+    cout<<"Enter the array:";
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    cout<<"Enter the element to be find:";
+    cin>>k;
+    int element=find(a,n,k);
+    cout<<"The element is :"<<element;
+    return 0;
+}
